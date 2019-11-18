@@ -2,6 +2,8 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
+const host = 'localhost';
+// git push heroku master
 
 function main() {
     weatherForm.addEventListener('submit', async (event) => {
@@ -10,7 +12,7 @@ function main() {
         messageOne.textContent = 'Loading...'
         messageTwo.textContent = '';
 
-        let url = 'http://localhost:3000/weather?address=' + search.value
+        let url = '/weather?address=' + search.value
 
         try {
             let responce = await fetch(url)

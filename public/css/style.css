@@ -81,3 +81,8 @@ button {
     font-size: 50px;
 
 }
+
+#weather-icon {
+    display: none;
+    margin: -50px auto;
+}

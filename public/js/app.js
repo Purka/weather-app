@@ -3,7 +3,7 @@ const search = document.querySelector('input')
 const locationField = document.querySelector('#message-1')
 const summary = document.querySelector('#message-2')
 const temperature = document.querySelector('#message-3')
-const precipProbability = document.querySelector('#message-4')
+
 
 weatherForm.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -11,7 +11,6 @@ weatherForm.addEventListener('submit', async (event) => {
     locationField.textContent = 'Loading...'
     summary.textContent = '';
     temperature.textContent = '';
-    precipProbability.textContent = '';
 
     let url = '/weather?address=' + search.value
 
@@ -25,6 +24,7 @@ weatherForm.addEventListener('submit', async (event) => {
             locationField.textContent = data.location
             summary.textContent = data.forecast.summary
             temperature.textContent = Math.round(data.forecast.temperature) + '°C'
+            console.log(data.ip)
         }
     } catch (err) {
         console.log(err)

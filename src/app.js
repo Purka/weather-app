@@ -52,7 +52,8 @@ app.get('/weather', async (req, res) => {
 
         return res.json({
             forecast: forecast,
-            location: geo.location
+            location: geo.location,
+            ip: req.ip
         })
     } catch (err) {
         return res.json({

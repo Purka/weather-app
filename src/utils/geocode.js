@@ -6,7 +6,6 @@ const axios = require('axios')
 module.exports.getCode = async (address) => {
     address = encodeURIComponent(address)
     const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=pk.eyJ1IjoicHVya2EiLCJhIjoiY2sycTk4N2pkMGJveTNjbG4zY3huOXF3dSJ9.ugHaAfyJqYeDpQzKKbm6zQ&limit=1'
-
     try {
         let { data } = await axios.get(url)
 

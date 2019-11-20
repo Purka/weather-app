@@ -2,22 +2,24 @@
 
 <html>
 
-<head>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
+{{>head}}
 
 <body>
     <div class="main-content">
         {{>header}}
         <p>Watch your weather</p>
 
-        <form class="weather-form">
-            <input placeholder="Location">
-            <button>Search</button>
-        </form>
+        <div class="weather-form">
+            <form>
+                <input placeholder="Location">
+                <button>Search</button>
+            </form>
+        </div>
 
         <p id="message-1"></p>
         <p id="message-2"></p>
+        <p id="message-3"></p>
+        <p id="message-4"></p>
     </div>
 
     {{>footer}}

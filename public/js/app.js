@@ -1,13 +1,17 @@
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
-const messageOne = document.querySelector('#message-1')
-const messageTwo = document.querySelector('#message-2')
+const locationField = document.querySelector('#message-1')
+const summary = document.querySelector('#message-2')
+const temperature = document.querySelector('#message-3')
+const precipProbability = document.querySelector('#message-4')
 
 weatherForm.addEventListener('submit', async (event) => {
     event.preventDefault()
 
-    messageOne.textContent = 'Loading...'
-    messageTwo.textContent = '';
+    locationField.textContent = 'Loading...'
+    summary.textContent = '';
+    temperature.textContent = '';
+    precipProbability.textContent = '';
 
     let url = '/weather?address=' + search.value
 
@@ -16,10 +20,11 @@ weatherForm.addEventListener('submit', async (event) => {
         let data = await responce.json()
 
         if (data.forecast === undefined) {
-            messageOne.textContent = data.message
+            locationField.textContent = data.message
         } else {
-            messageOne.textContent = data.location
-            messageTwo.textContent = data.forecast
+            locationField.textContent = data.location
+            summary.textContent = data.forecast.summary
+            temperature.textContent = Math.round(data.forecast.temperature) + '°C'
         }
     } catch (err) {
         console.log(err)

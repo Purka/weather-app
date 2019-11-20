@@ -1,6 +1,6 @@
 body {
     color: rgb(26, 61, 89);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0 auto;
     padding: 0px 0px;
 
@@ -9,25 +9,14 @@ body {
     min-height: 100vh;
 }
 
-.main-content {
-    flex-grow: 1;
-    align-content: center;
-}
-
-.weather-form {
-    margin: 25px;
-    padding: 5px;
-    text-align: center;
-}
-
 footer {
-    background-color:rgb(26, 61, 89);
+    background-color: rgba(26, 61, 89, 0.3);
     width: 100%;
-    color: whitesmoke;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #666;
+    font-family: 'Roboto', sans-serif;
     padding: 16px 20px;
     margin-top: 16px;
-    border-top: 1px solid black;
+    font-size: 11px;
 }
 
 header {
@@ -69,4 +58,26 @@ button {
     padding: 8px;
     color: white;
     background: rgb(26, 61, 89);
+}
+
+.main-content {
+    flex-grow: 1;
+    align-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.weather-form * {
+    font-size: 18px;
+}
+
+.weather-form {
+    margin: 25px;
+    padding: 5px;
+    text-align: center;
+}
+
+#message-3 {
+    font-size: 50px;
+
 }
